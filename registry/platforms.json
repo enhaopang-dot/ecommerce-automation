@@ -37,7 +37,7 @@
         "dashboard": "AI Native 中台「千川 Agent」卡片"
       },
       "credentials_path": "01-抖音电商API接入/_构建脚本/qc-oauth/keys/",
-      "project_path": "D:/Claude/项目/14 内容管理/01-抖音电商API接入/",
+      "project_path": "（本地项目）",
       "verified_at": "2026-10-27"
     },
     {
@@ -94,11 +94,11 @@
         "temporary": true,
         "playbook": "references/browser-extraction-playbook.md",
         "entries": ["fxg.jinritemai.com 订单导出", "compass.jinritemai.com 直播明细下载"],
-        "profile": "C:/Users/ROG/.claude/tools/browser-profiles/edge-douyin-compass",
+        "profile": "（本地浏览器配置）",
         "retire_when": "抖店主流类目批下、API 打通"
       },
       "decision_pending": "用户计划后续凑 5 个服务商/客户案例，材料齐后推服务市场入驻",
-      "project_path": "D:/Claude/项目/14 内容管理/01-抖音电商API接入/",
+      "project_path": "（本地项目）",
       "verified_at": "2026-10-27"
     },
     {
@@ -129,7 +129,7 @@
         "db": "02-抖音开放平台-内容数据/03-数据/douyin.db"
       },
       "custom_collector": "02-抖音开放平台-内容数据/_构建脚本/douyin_collect.py",
-      "project_path": "D:/Claude/项目/14 内容管理/02-抖音开放平台-内容数据/",
+      "project_path": "（本地项目）",
       "verified_at": "2026-10-26"
     },
     {
