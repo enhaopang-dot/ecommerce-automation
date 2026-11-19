@@ -1,0 +1,218 @@
+{
+  "updated": "2026-10-27",
+  "source_of_truth": "references/platforms.md（人读）+ 本文件（机读），改动须同轮同步",
+  "legend": {
+    "status": ["live", "in_progress", "not_started", "unknown"],
+    "verified_at": "本文件中该平台事实的最后核实日期；空字符串=未核实"
+  },
+  "platforms": [
+    {
+      "key": "qianchuan",
+      "name": "巨量千川",
+      "group": "douyin_ads",
+      "status": "live",
+      "portal": "https://open.oceanengine.com",
+      "api_base": "https://api.oceanengine.com/open_api/v1.0/",
+      "console": "https://qianchuan.jinritemai.com/openapi/qc/audit/oauth.html",
+      "account": {
+        "login": "qianchuan OAuth（无独立账号）",
+        "phone": "",
+        "subject": "（你的公司名称）",
+        "credit_code": "（统一社会信用代码）"
+      },
+      "app": {
+        "name": "千川取数应用",
+        "app_id": "（你的 APP_ID）",
+        "callback": "https://xuanyunz.com/qc-oauth/callback",
+        "permissions": ["账户管理", "投放管理", "数据报表", "素材管理", "工具", "资金与流水查询"]
+      },
+      "billing": { "model": "免费（服务商模式）", "balance": null },
+      "data_available": ["消耗", "净成交金额", "成交单数", "ROI", "素材维度报表", "账户与计划结构"],
+      "data_unavailable": ["客户信息接口（平台限制）", "随心推（PC 版置灰）"],
+      "blockers": [],
+      "automation": {
+        "scripts": ["qianchuan_daily.py", "qianchuan_watch.py"],
+        "schedule": ["10:30", "15:30", "21:30"],
+        "ledger": "05-数据/千川日报.json",
+        "dashboard": "AI Native 中台「千川 Agent」卡片"
+      },
+      "credentials_path": "01-抖音电商API接入/_构建脚本/qc-oauth/keys/",
+      "project_path": "D:/Claude/项目/14 内容管理/01-抖音电商API接入/",
+      "verified_at": "2026-10-27"
+    },
+    {
+      "key": "doudian",
+      "name": "抖店",
+      "group": "douyin_shop",
+      "status": "in_progress",
+      "portal": "https://op.jinritemai.com",
+      "console": "https://op.jinritemai.com/console",
+      "console_paths": {
+        "auth": "/console/user-manage/auth",
+        "qualification": "/console/user-manage/qualification",
+        "billing": "/console/cost/account",
+        "app_center": "/console/app-manage/center",
+        "app_create": "/console/app-manage/app-create",
+        "supplier_onboarding": "https://partner.jinritemai.com/supplier"
+      },
+      "account": {
+        "login": "长生",
+        "phone": "（你的手机号）",
+        "email": "（你的邮箱）",
+        "login_method": "手机号+短信验证码（无密码）",
+        "subject": "（你的公司名称）",
+        "credit_code": "（统一社会信用代码）"
+      },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "auth": {
+        "subject_certified": true,
+        "subject_certified_at": "2026-10-27",
+        "category_qualification": "无",
+        "available_categories_20261027": {
+          "电商商家自研": ["商家后台系统", "品牌会员通"],
+          "电商软件服务商": ["仓储管理", "抖店云持续集成CI/CD", "AI售后挽单", "AI智能客服-微应用（暂不开放准入）"],
+          "安装服务": ["检取一体"]
+        }
+      },
+      "billing": {
+        "account_opened": true,
+        "opened_at": "2026-10-27",
+        "balance_cny": 0,
+        "model": "按接口调用收费（2023-04-01 起）"
+      },
+      "data_available": ["订单API", "物流API", "售后API", "商品API", "资金API", "精选联盟API"],
+      "data_unavailable": ["电商罗盘经营分析（官方 FAQ 2026-08-06 明确未开放）"],
+      "blockers": ["类目资质未办", "应用未创建", "计费账户未充值"],
+      "auth_gate": {
+        "self_dev": "仅自有或强关联店铺（同法人/母子公司/控股），需软著 + 绑定 shop_id",
+        "isv": "可服务客户店铺，但当前类目池无订单管理/商品管理/数据分析类目",
+        "mainstream_categories_unlock": "推测需服务市场供应商入驻，官方原文未核实"
+      },
+      "supplier_onboarding_materials": ["公司介绍", "其他开放平台服务链接", "至少 5 个客户合作案例（含合同复印件）", "产品方案（登录链接+测试账号或教程录屏）"],
+      "current_route": {
+        "type": "browser_extraction",
+        "temporary": true,
+        "playbook": "references/browser-extraction-playbook.md",
+        "entries": ["fxg.jinritemai.com 订单导出", "compass.jinritemai.com 直播明细下载"],
+        "profile": "C:/Users/ROG/.claude/tools/browser-profiles/edge-douyin-compass",
+        "retire_when": "抖店主流类目批下、API 打通"
+      },
+      "decision_pending": "用户计划后续凑 5 个服务商/客户案例，材料齐后推服务市场入驻",
+      "project_path": "D:/Claude/项目/14 内容管理/01-抖音电商API接入/",
+      "verified_at": "2026-10-27"
+    },
+    {
+      "key": "douyin_open",
+      "name": "抖音开放平台（内容数据）",
+      "group": "douyin_content",
+      "status": "in_progress",
+      "portal": "https://open.douyin.com",
+      "console": "",
+      "account": {
+        "login": "xuanyun_media",
+        "phone": "（你的手机号）",
+        "subject": "（你的公司名称）",
+        "credit_code": "（统一社会信用代码）"
+      },
+      "app": {
+        "name": "内容数据面板",
+        "app_id": "（你的应用 ID）",
+        "callback": "https://xuanyunz.com/douyin/callback",
+        "permissions": ["内容运营-视频信息数据（待审）", "内容运营-视频互动数据（待审）", "抖音授权（未开通）"]
+      },
+      "data_available": ["作品列表", "播放", "点赞", "评论", "分享", "粉丝数（部分）"],
+      "data_unavailable": ["完播率（须创作者中心导出）", "粉丝画像（需 fans.data 另申请）", "30 天前创建视频的按天曲线"],
+      "blockers": ["主体认证审核中", "基础信息审核中", "两项能力未申请", "OAuth 授权能力未开通"],
+      "fallback": {
+        "route": "创作者中心 → 内容管理 → 作品 → 导出数据（全量无时间窗）",
+        "script": "02-抖音开放平台-内容数据/_构建脚本/parse_creator_xlsx.py",
+        "db": "02-抖音开放平台-内容数据/03-数据/douyin.db"
+      },
+      "custom_collector": "02-抖音开放平台-内容数据/_构建脚本/douyin_collect.py",
+      "project_path": "D:/Claude/项目/14 内容管理/02-抖音开放平台-内容数据/",
+      "verified_at": "2026-10-26"
+    },
+    {
+      "key": "taobao",
+      "name": "淘宝开放平台",
+      "group": "taobao",
+      "status": "in_progress",
+      "portal": "https://open.taobao.com",
+      "console": "",
+      "account": {
+        "login": "（旺旺号）（旺旺）",
+        "phone": "（你的手机号）",
+        "email": "（你的邮箱）",
+        "subject": "个人开发者（（个人开发者））",
+        "credit_code": ""
+      },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "data_available": [],
+      "data_unavailable": [],
+      "blockers": ["开发者已入驻但服务能力等级为零", "未确定自研或 ISV 路线", "未定类目与接口权限"],
+      "project_path": "",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "key": "pinduoduo",
+      "name": "拼多多开放平台",
+      "group": "pdd",
+      "status": "not_started",
+      "portal": "https://open.pinduoduo.com",
+      "console": "",
+      "account": { "login": "", "phone": "", "subject": "", "credit_code": "" },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "data_available": [],
+      "data_unavailable": [],
+      "blockers": ["未注册", "入口待核实"],
+      "project_path": "",
+      "verified_at": ""
+    },
+    {
+      "key": "kuaishou",
+      "name": "快手小店",
+      "group": "kuaishou",
+      "status": "not_started",
+      "portal": "https://open.kwaixiaodian.com",
+      "console": "",
+      "account": { "login": "", "phone": "", "subject": "", "credit_code": "" },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "data_available": [],
+      "data_unavailable": [],
+      "blockers": ["未注册", "入口待核实"],
+      "project_path": "",
+      "verified_at": ""
+    },
+    {
+      "key": "channels_shop",
+      "name": "视频号小店",
+      "group": "wechat",
+      "status": "not_started",
+      "portal": "",
+      "console": "https://channels.weixin.qq.com",
+      "account": { "login": "", "phone": "", "subject": "", "credit_code": "" },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "data_available": [],
+      "data_unavailable": [],
+      "blockers": ["未注册", "开放平台入口待核实"],
+      "related_skill": "channels-live-analysis（网页侧直播抓数，非开放平台）",
+      "project_path": "",
+      "verified_at": ""
+    },
+    {
+      "key": "xiaohongshu",
+      "name": "小红书",
+      "group": "xhs",
+      "status": "not_started",
+      "portal": "",
+      "console": "",
+      "account": { "login": "", "phone": "", "subject": "", "credit_code": "" },
+      "app": { "name": "", "app_id": "", "callback": "", "permissions": [] },
+      "data_available": [],
+      "data_unavailable": [],
+      "blockers": ["未注册", "入口待核实"],
+      "project_path": "",
+      "verified_at": ""
+    }
+  ]
+}
